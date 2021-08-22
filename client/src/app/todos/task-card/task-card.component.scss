@@ -1,0 +1,21 @@
+:host {
+  width: 100%;
+  display: grid;
+  place-items: center;
+
+  .task-card {
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 960px) {
+    .task-card {
+      width: 33vw;
+    }
+  }
+
+  @media screen and (max-width: 959px) {
+    .task-card {
+      width: 100%;
+    }
+  }
+}
