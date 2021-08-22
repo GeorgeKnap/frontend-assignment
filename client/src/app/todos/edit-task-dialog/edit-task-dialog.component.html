@@ -1,18 +1,19 @@
 <form [formGroup]="taskForm">
-    <h1 mat-dialog-title>Create a task</h1>
-    <div mat-dialog-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
+    <h1 mat-dialog-title>Edit a task</h1>
+    <div mat-dialog-content fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="12px">
         <mat-form-field appearance="standard">
             <mat-label>Task title</mat-label>
-            <input matInput formControlName="title">
+            <input matInput formControlName="title" autocomplete="off">
             <mat-hint>max. {{validation.title}} characters</mat-hint>
             <mat-error *ngIf="taskForm.controls.title.hasError('maxlength')">Exceeded maximum length</mat-error>
         </mat-form-field>
         <mat-form-field appearance="standard">
             <mat-label>Task description</mat-label>
-            <input matInput formControlName="description">
+            <textarea matInput formControlName="description" autocomplete="off" cdkTextareaAutosize></textarea>
             <mat-hint>max. {{validation.description}} characters</mat-hint>
             <mat-error *ngIf="taskForm.controls.description.hasError('maxlength')">Exceeded maximum length</mat-error>
         </mat-form-field>
+        <mat-checkbox formControlName="completed">Completed</mat-checkbox>
     </div>
     <div mat-dialog-actions align="end">
         <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>

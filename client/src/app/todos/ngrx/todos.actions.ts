@@ -17,3 +17,7 @@ export const deleteTaskFailure = createAction('[Tasks] Delete Task Failure', pro
 export const editTask = createAction('[Tasks] Edit Task', props<{ taskId: number; task: TaskPost }>());
 export const editTaskSuccess = createAction('[Tasks] Edit Task Success', props<{ task: Task }>());
 export const editTaskFailure = createAction('[Tasks] Edit Task Failure', props<{ error: any }>());
+
+export const completeTask = createAction('[Tasks] Complete Task', props<{ task: Task }>());
+export const completeTaskSuccess = createAction('[Tasks] Complete Task Success', props<{ task: Task }>());
+export const completeTaskFailure = createAction('[Tasks] Complete Task Failure', props<{ error: any }>());

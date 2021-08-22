@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '@todos/api';
 
 @Component({
@@ -7,10 +7,11 @@ import { Task } from '@todos/api';
   styleUrls: ['./task-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TaskCardComponent implements OnInit {
+export class TaskCardComponent {
   @Input() task!: Task;
   @Output() taskDeleted: EventEmitter<number> = new EventEmitter();
   @Output() taskEdit: EventEmitter<Task> = new EventEmitter();
+  @Output() taskComplete: EventEmitter<Task> = new EventEmitter();
   constructor() {}
 
   delete() {
@@ -18,10 +19,10 @@ export class TaskCardComponent implements OnInit {
   }
 
   edit() {
-    this.taskEdit.emit(this.task)
+    this.taskEdit.emit(this.task);
   }
 
-  ngOnInit(): void {
-    console.log(this.task);
+  complete() {
+    this.taskComplete.emit(this.task);
   }
 }

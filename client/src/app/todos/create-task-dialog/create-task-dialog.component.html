@@ -3,13 +3,13 @@
     <div mat-dialog-content fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
         <mat-form-field appearance="standard">
             <mat-label>Task title</mat-label>
-            <input matInput formControlName="title">
+            <input matInput formControlName="title" autocomplete="off">
             <mat-hint>max. {{validation.title}} characters</mat-hint>
             <mat-error *ngIf="taskForm.controls.title.hasError('maxlength')">Exceeded maximum length</mat-error>
         </mat-form-field>
         <mat-form-field appearance="standard">
             <mat-label>Task description</mat-label>
-            <input matInput formControlName="description">
+            <textarea matInput formControlName="description" autocomplete="off" cdkTextareaAutosize></textarea>
             <mat-hint>max. {{validation.description}} characters</mat-hint>
             <mat-error *ngIf="taskForm.controls.description.hasError('maxlength')">Exceeded maximum length</mat-error>
         </mat-form-field>

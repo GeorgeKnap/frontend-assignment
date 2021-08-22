@@ -1,3 +1,3 @@
 import { Task } from './task.model';
 
-export type TaskPost = Pick<Task, 'title' | 'description'>;
+export type TaskPost = Partial<Pick<Task, 'title' | 'description' | 'completed'>>;

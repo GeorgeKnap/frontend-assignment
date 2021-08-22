@@ -1,0 +1,13 @@
+form {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .mat-dialog-content {
+    margin: 0;
+
+    textarea {
+        overflow: hidden;
+    }
+  }
+}
