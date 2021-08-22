@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatCheckboxModule
   ],
   exports: [
     MatButtonModule,
@@ -32,6 +34,7 @@ import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatCheckboxModule
   ],
   providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }],
 })

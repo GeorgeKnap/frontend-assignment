@@ -38,6 +38,7 @@ export class EditTaskDialogComponent extends BaseComponent implements OnInit, On
         task: {
           title: this.taskForm.controls.title.value,
           description: this.taskForm.controls.description.value,
+          completed: this.taskForm.controls.completed.value,
         },
       }),
     );
@@ -47,6 +48,7 @@ export class EditTaskDialogComponent extends BaseComponent implements OnInit, On
     this.taskForm = this.fb.group({
       title: [this.data.title, [Validators.required, Validators.maxLength(this.validation.title)]],
       description: [this.data.description, [Validators.required, , Validators.maxLength(this.validation.description)]],
+      completed: this.data.completed,
     });
 
     this.actions$

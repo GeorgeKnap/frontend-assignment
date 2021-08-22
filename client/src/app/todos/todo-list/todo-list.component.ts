@@ -33,6 +33,9 @@ export class TodoListComponent implements OnInit {
   taskEdit(task: Task) {
     this.matDialog.open(EditTaskDialogComponent, {
       data: task,
+      disableClose: true,
+      height: '400px',
+      width: '400px'
     });
   }
 
