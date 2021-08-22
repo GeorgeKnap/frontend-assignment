@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Task } from '@todos/api';
+import { TaskListItem } from '../models/task-list-item.model';
 
 @Component({
   selector: 'app-task-card',
@@ -8,10 +8,11 @@ import { Task } from '@todos/api';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaskCardComponent {
-  @Input() task!: Task;
+  @Input() task!: TaskListItem;
   @Output() taskDeleted: EventEmitter<number> = new EventEmitter();
-  @Output() taskEdit: EventEmitter<Task> = new EventEmitter();
-  @Output() taskComplete: EventEmitter<Task> = new EventEmitter();
+  @Output() taskEdit: EventEmitter<TaskListItem> = new EventEmitter();
+  @Output() taskComplete: EventEmitter<TaskListItem> = new EventEmitter();
+  @Output() expansionToggled: EventEmitter<TaskListItem> = new EventEmitter();
   constructor() {}
 
   delete() {
@@ -24,5 +25,10 @@ export class TaskCardComponent {
 
   complete() {
     this.taskComplete.emit(this.task);
+  }
+
+  expanded(expanded: boolean) {
+    this.task.expanded = expanded;
+    this.expansionToggled.emit(this.task);
   }
 }
