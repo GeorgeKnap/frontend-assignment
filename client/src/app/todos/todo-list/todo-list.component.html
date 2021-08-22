@@ -1,12 +1,14 @@
 <ng-container *ngIf="tasks$ | async as tasks; else noData">
     <ng-container *ngIf="tasks.length > 0; else noData">
-        <app-task-card *ngFor="let task of tasks" [task]="task" (taskDeleted)="taskDeleted($event)" (taskEdit)="taskEdit($event)">
+        <app-task-card *ngFor="let task of tasks" [task]="task" (taskDeleted)="taskDeleted($event)"
+            (taskEdit)="taskEdit($event)" (taskComplete)="taskComplete($event)">
         </app-task-card>
     </ng-container>
 </ng-container>
 
-<button mat-fab class="mat-fab mat-fab-bottom-right" aria-label="Add a task" (click)="createTask()">
-    <mat-icon>add</mat-icon>
+<button mat-fab class="mat-fab mat-fab-bottom-right" color="primary" aria-label="Create task" (click)="createTask()"
+    matTooltip="Create Task">
+    <mat-icon>add_task</mat-icon>
 </button>
 
 

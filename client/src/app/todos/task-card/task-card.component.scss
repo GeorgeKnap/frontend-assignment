@@ -7,6 +7,10 @@
     box-sizing: border-box;
   }
 
+  .completed {
+    background-color: #9adbab;
+  }
+
   @media screen and (min-width: 960px) {
     .task-card {
       width: 33vw;

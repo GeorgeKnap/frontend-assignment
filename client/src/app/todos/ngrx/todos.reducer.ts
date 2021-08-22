@@ -29,6 +29,12 @@ export const reducer = createReducer(
     tasks.splice(index, 1, task);
     return { ...state, tasks };
   }),
+  on(TodosActions.completeTaskSuccess, (state, { task }) => {
+    let tasks = [...state.tasks];
+    const index = findIndex(tasks, { id: task.id });
+    tasks.splice(index, 1, task);
+    return { ...state, tasks };
+  }),
   on(TodosActions.deleteTaskSuccess, (state, { task }) => {
     const tasks = [...state.tasks];
     remove(tasks, t => t.id === task.id);

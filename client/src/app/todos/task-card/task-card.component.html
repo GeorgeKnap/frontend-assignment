@@ -1,15 +1,25 @@
-<mat-expansion-panel class="task-card" hideToggle>
+<mat-expansion-panel class="task-card" [class.completed]="task.completed" hideToggle>
     <mat-expansion-panel-header>
         <mat-panel-title>
             {{task.title}}
         </mat-panel-title>
         <mat-panel-description fxLayout="row" fxLayoutAlign="end center">
-          <!-- <mat-icon>account_circle</mat-icon> -->
+          <mat-icon *ngIf="task.completed">task_alt</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
       {{task.description}}
       <mat-action-row>
-        <button mat-button color="accent" (click)="edit()">Edit Task</button>
-        <button mat-button color="primary" (click)="delete()">Delete Task</button>
+        <button mat-icon-button color="primary" (click)="edit()" matTooltip="Edit Task" [disabled]="task.completed"
+        aria-label="edit task button">
+          <mat-icon>edit_note</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="delete()" matTooltip="Delete Task"
+        aria-label="delete task button">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="complete()" matTooltip="Complete Task" [disabled]="task.completed"
+        aria-label="complete task button">
+          <mat-icon>task_alt</mat-icon>
+        </button>
       </mat-action-row>
 </mat-expansion-panel>

@@ -7,31 +7,31 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
   imports: [
     MatButtonModule,
     MatCardModule,
-    MatProgressSpinnerModule,
     MatIconModule,
     MatFormFieldModule,
     MatDialogModule,
     ReactiveFormsModule,
     MatInputModule,
     MatExpansionModule,
+    MatTooltipModule,
   ],
   exports: [
     MatButtonModule,
     MatCardModule,
-    MatProgressSpinnerModule,
     MatIconModule,
     MatFormFieldModule,
     MatDialogModule,
     ReactiveFormsModule,
     MatInputModule,
     MatExpansionModule,
+    MatTooltipModule,
   ],
   providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }],
 })
