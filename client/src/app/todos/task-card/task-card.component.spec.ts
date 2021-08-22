@@ -27,8 +27,8 @@ describe('TaskCardComponent', () => {
     component.task = {
       id:1,
       completed: false,
-      description: 'description',
-      title: 'title',
+      description: 'mock description',
+      title: 'mock title',
       expanded: false,
       priority: 1,
       project: null
@@ -42,8 +42,19 @@ describe('TaskCardComponent', () => {
 
   it('expansion panel should exist', async () => {
     const expansionPanel = await loader.getHarness(MatExpansionPanelHarness);
-    console.log(expansionPanel);
     expect(expansionPanel).toBeTruthy();
+  });
+
+  it('expansion panel title should be correct', async () => {
+    const expansionPanel = await loader.getHarness(MatExpansionPanelHarness);
+    const title = await expansionPanel.getTitle();
+    expect(title).toEqual('mock title');
+  });
+
+  it('expansion panel description should be correct', async () => {
+    const nativeElement: HTMLElement = fixture.nativeElement;
+    const body = nativeElement.querySelector('.mat-expansion-panel-body')!;
+    expect(body.textContent?.trim()).toEqual('mock description');
   });
 
 });
