@@ -1,0 +1,15 @@
+<mat-expansion-panel class="task-card" hideToggle>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{task.title}}
+        </mat-panel-title>
+        <mat-panel-description fxLayout="row" fxLayoutAlign="end center">
+          <!-- <mat-icon>account_circle</mat-icon> -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      {{task.description}}
+      <mat-action-row>
+        <button mat-button color="accent" (click)="edit()">Edit Task</button>
+        <button mat-button color="primary" (click)="delete()">Delete Task</button>
+      </mat-action-row>
+</mat-expansion-panel>
