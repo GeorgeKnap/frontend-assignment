@@ -22,7 +22,7 @@ describe('ApiService', () => {
 
   it('should get the tasks', () => {
     const mockResponse: Array<Task> = [
-      { id: 1, title: 'Mock title', description: 'Moc description', priority: 1, project: null },
+      { id: 1, title: 'Mock title', description: 'Moc description', priority: 1, project: null, completed: false },
     ];
     service.getTasks().subscribe(tasks => {
       expect(tasks.length).toBe(1);
