@@ -23,7 +23,10 @@ export class TodoListComponent implements OnInit {
   }
 
   createTask() {
-    this.matDialog.open(CreateTaskDialogComponent);
+    this.matDialog.open(CreateTaskDialogComponent, {
+      height: '400px',
+      width: '400px'
+    });
   }
 
   taskDeleted(taskId: number) {
