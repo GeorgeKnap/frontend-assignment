@@ -1,4 +1,5 @@
-<mat-expansion-panel class="task-card" [class.completed]="task.completed" hideToggle>
+<mat-expansion-panel class="task-card" [class.completed]="task.completed" hideToggle (afterExpand)="expanded(true)"
+  (afterCollapse)="expanded(false)" [expanded]="task.expanded">
   <mat-expansion-panel-header>
     <mat-panel-title>
       {{task.title}}
