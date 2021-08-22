@@ -47,7 +47,7 @@ export class EditTaskDialogComponent extends BaseComponent implements OnInit, On
   ngOnInit(): void {
     this.taskForm = this.fb.group({
       title: [this.data.title, [Validators.required, Validators.maxLength(this.validation.title)]],
-      description: [this.data.description, [Validators.required, , Validators.maxLength(this.validation.description)]],
+      description: [this.data.description, [Validators.maxLength(this.validation.description)]],
       completed: this.data.completed,
     });
 

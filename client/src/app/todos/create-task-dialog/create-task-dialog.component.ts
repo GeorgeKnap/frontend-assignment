@@ -42,7 +42,7 @@ export class CreateTaskDialogComponent extends BaseComponent implements OnInit, 
   ngOnInit(): void {
     this.taskForm = this.fb.group({
       title: [null, [Validators.required, Validators.maxLength(this.validation.title)]],
-      description: [null, [Validators.required, , Validators.maxLength(this.validation.description)]],
+      description: [null, [Validators.maxLength(this.validation.description)]],
     });
 
     this.actions$
