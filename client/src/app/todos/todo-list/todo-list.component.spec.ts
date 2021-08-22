@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { MaterialModule } from '@todos/shared';
 import * as fromTodos from '../ngrx/todos.reducer';
 import { TodoListComponent } from './todo-list.component';
 
@@ -17,12 +19,14 @@ describe('TodoListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [],
+      imports: [MaterialModule],
       providers: [
         provideMockStore({ initialState }),
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} },
       ],
     });
- 
+
     store = TestBed.inject(MockStore);
     fixture = TestBed.createComponent(TodoListComponent);
     component = fixture.componentInstance;
